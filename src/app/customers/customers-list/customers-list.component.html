@@ -1,0 +1,9 @@
+<div *ngIf="customers && customers.length">
+  <h3>Customer Lists</h3>
+  <div *ngFor="let customer of customers">
+    <app-customer-details [customer]='customer'></app-customer-details>
+  </div>
+</div>
+<div *ngIf="customers.length == 0">
+	<h3>No Customers</h3>
+</div>

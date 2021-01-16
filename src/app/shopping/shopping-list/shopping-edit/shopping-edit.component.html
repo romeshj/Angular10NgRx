@@ -1,0 +1,48 @@
+<!--<div class="row">
+	<div class="col-md-12">
+		<form>
+		  <div class="form-group">
+			<label for="ingredientName">Ingredient Name</label>
+			<input type="text" class="form-control" id="ingredientName" #ingredientNameInput/>
+		  </div>
+		  <div class="form-group">
+			<label for="ingredientAmount">Ingredient Amount</label>
+			<input type="number" class="form-control" id="ingredientAmount" #ingredientAmountInput/>
+		  </div>
+		  <button type="submit" class="btn btn-success" (click)="addIngredientItem(ingredientNameInput, ingredientAmountInput)">Add</button> &nbsp; 
+		  <button type="button" class="btn btn-danger">Delete</button> &nbsp; 
+		  <button type="button" class="btn btn-primary">Clear</button>
+		</form>
+	</div>
+</div>-->
+
+<div class="row">
+	<div class="col-md-12">
+		<form name="ingredientForm" novalidate #ingFrm="ngForm" (ngSubmit)="onSubmit(ingFrm)">
+		  <div class="form-group">
+			<label for="ingredientName">Ingredient Name</label>
+			<input type="text" class="form-control" id="ingredientName" name="ingredientName" ngModel #ingredientName="ngModel" required/>
+		  </div>
+		  <div class="form-group">
+			<label for="ingredientAmount">Ingredient Amount</label>
+			<input type="number" class="form-control" id="ingredientAmount" name="ingredientAmount" ngModel #ingredientAmount="ngModel" required/>
+		  </div>
+		  <button type="submit" class="btn btn-success" [disabled]="!ingFrm.valid">{{editMode ? 'Update' : 'Add'}}</button> &nbsp; 
+		  <button type="button" class="btn btn-danger" *ngIf="editMode" (click)="onDelete()">Delete</button> &nbsp; 
+		  <button type="button" class="btn btn-primary" (click)="onClear()">Clear</button>
+		</form>
+	</div>
+</div>
+
+<div class="row"  appHighlightRenderer>
+	<div class="col-md-12">
+		Highlight using Renderer2 and HostListener
+	</div>
+</div>
+
+<div class="row"  appHighlightHostBinding>
+	<div class="col-md-12">
+		Highlight using HostBinding and HostListener
+	</div>
+</div>
+

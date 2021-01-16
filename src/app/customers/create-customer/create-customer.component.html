@@ -1,0 +1,19 @@
+<div style="max-width:300px;">
+  <h3>Create Customers</h3>
+  <form name="customerForm" noValidate #customerFrm="ngForm" (ngSubmit)="onSubmit(customerFrm)">
+  <div class="form-group">
+    <input class="form-control" type="text" placeholder="id" id="id" name="id" ngModel #id="ngModel" />
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" placeholder="name" id="name" name="name" ngModel #name="ngModel" />
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="number" placeholder="age" id="age" name="age" ngModel #age="ngModel" />
+  </div>
+  <div class="form-group form-check">
+    <input class="form-check-input" type="checkbox" name="isActive" id="isActive" ngModel #isActive="ngModel" /> isActive
+  </div>
+  <button class="btn btn-success" type="submit" class="btn btn-success">Save Customer</button> &nbsp;
+  <button class="btn btn-success" type="submit" class="btn btn-success" *ngIf="editMode">Edit  Customer</button>
+  </form>
+</div>

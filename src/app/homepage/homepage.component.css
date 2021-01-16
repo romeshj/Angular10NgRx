@@ -1,0 +1,7 @@
+#navb2 .navbar-nav .nav-item.active{
+    background-color: #007bff;
+}
+
+#navb2 .navbar-nav .nav-item.active a.nav-link{
+	color: #fff;
+}

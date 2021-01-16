@@ -1,0 +1,14 @@
+<div *ngIf="customer">
+  <div>
+    <label>Name: </label> {{customer.name}}
+  </div>
+  <div>
+    <label>Age: </label> {{customer.age}}
+  </div>
+  <div>
+    <label>Active: </label> {{customer.active}}
+  </div>
+  <button type="button" class="button is-small btn-danger" (click)='removeCustomer(customer.id)'>Delete</button> &nbsp;
+  <button type="button" class="button is-small btn-primary" (click)="onEdit(customer)">Edit</button>
+   <hr/>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin:24px 0;">
+				<a class="navbar-brand" href="#">Angular 10</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb1" aria-expanded="true">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navb2">
+				  <ul class="navbar-nav mr-auto">
+					<li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['/dashboard/recipes']">Recipes</a></li>
+				  </ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<main [@leftToRight]="o.isActivated ? o.activatedRoute : ''">
+				<router-outlet #o="outlet"></router-outlet>
+			</main>
+		</div>
+	</div>
+</div>

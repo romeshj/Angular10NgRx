@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin:24px 0;">
+    <a class="navbar-brand" href="#">Recipe Book</a>
+	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb1" aria-expanded="true">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navb1">
+	  <ul class="navbar-nav mr-auto">
+		<li class="nav-item" routerLinkActive="active" *ngIf="!isAuthenticated"><a class="nav-link" [routerLink]="['/dashboard/auth']">Authenticate</a></li>
+		<li class="nav-item" routerLinkActive="active" *ngIf="isAuthenticated"><a class="nav-link" [routerLink]="['/dashboard/recipes']">Recipes</a></li>
+		<li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['/dashboard/shoppinglist']">Shopping Lists</a></li>
+		<li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['/dashboard/customers']">Customers</a></li>
+	  </ul>
+	  <ul class="nav navbar-nav navbar-right">
+	    <li class="nav-item" routerLinkActive="active" *ngIf="isAuthenticated"><a href="javascript:void(0)" class="nav-link" (click)="onLogOut()">Logout</a></li>
+		<li class="nav-item dropdown" *ngIf="isAuthenticated">
+		  <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage <span class="caret"></span></a>
+		  <ul class="dropdown-menu">
+			<a href="javascript:void(0)" class="dropdown-item" (click)="onSaveRecipes()">Save Data</a>
+			<a href="javascript:void(0)" class="dropdown-item" (click)="onFetchRecipes()">Fetch Data</a>
+		  </ul>
+		</li>
+	  </ul>
+	</div>
+</nav>
